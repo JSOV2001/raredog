@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <!-- Robot's leg -->
+    <xacro:macro name="shoulder">
+        <material>Gazebo/Red</material>
+        <gravity>1</gravity>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.001</min_depth> 
+        <mu1>0.10</mu1>
+        <mu2>0.10</mu2>
+        <fdir1>1 0 0</fdir1>
+        <kp>50000.0</kp>
+        <kd>1.0</kd> 
+        <self_collide>1</self_collide>
+        <enable_wind>1</enable_wind>
+    </xacro:macro>
+
+    <xacro:macro name="elbow">
+        <material>Gazebo/DarkGrey</material>
+        <gravity>1</gravity>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.001</min_depth> 
+        <mu1>0.75</mu1>
+        <mu2>0.10</mu2>
+        <fdir1>1 0 0</fdir1>
+        <kp>50000.0</kp>
+        <kd>1.0</kd> 
+        <self_collide>1</self_collide>
+        <enable_wind>1</enable_wind>
+    </xacro:macro>
+
+    <xacro:macro name="wrist">
+        <material>Gazebo/Red</material>
+        <gravity>1</gravity>
+        <max_vel>0.01</max_vel>
+        <min_depth>0.001</min_depth> 
+        <mu1>0.75</mu1>
+        <mu2>0.10</mu2>
+        <fdir1>1 0 0</fdir1>
+        <kp>50000.0</kp>
+        <kd>1.0</kd> 
+        <self_collide>1</self_collide>
+        <enable_wind>1</enable_wind>
+    </xacro:macro>
+
+    <!-- Robot's base -->
+    <gazebo reference="base_footprint">
+        <material>Gazebo/Red</material>
+        <gravity>1</gravity>
+        <mu1>0.10</mu1>
+        <mu2>0.10</mu2>
+        <fdir1>1 0 0</fdir1>
+        <self_collide>1</self_collide>
+        <enable_wind>1</enable_wind>
+    </gazebo>
+
+    <!-- Robot's front right leg -->
+    <gazebo reference="front_right_shoulder">
+        <xacro:shoulder></xacro:shoulder>
+    </gazebo>
+    
+    <gazebo reference="front_right_elbow">
+        <xacro:elbow></xacro:elbow>
+    </gazebo>
+
+    <gazebo reference="front_right_wrist">
+        <xacro:wrist></xacro:wrist>
+    </gazebo>
+    
+    <!-- Robot's front left leg -->
+    <gazebo reference="front_left_shoulder">
+        <xacro:shoulder></xacro:shoulder>
+    </gazebo>
+    
+    <gazebo reference="front_left_elbow">
+        <xacro:elbow></xacro:elbow>
+    </gazebo>
+
+    <gazebo reference="front_left_wrist">
+        <xacro:wrist></xacro:wrist>
+    </gazebo>
+
+    <!-- Robot's back right leg -->
+    <gazebo reference="back_right_shoulder">
+        <xacro:shoulder></xacro:shoulder>
+    </gazebo>
+    
+    <gazebo reference="back_right_elbow">
+        <xacro:elbow></xacro:elbow>
+    </gazebo>
+
+    <gazebo reference="back_right_wrist">
+        <xacro:wrist></xacro:wrist>
+    </gazebo>
+
+    <!-- Robot's back left leg -->
+    <gazebo reference="back_left_shoulder">
+        <xacro:shoulder></xacro:shoulder>
+    </gazebo>
+    
+    <gazebo reference="back_left_elbow">
+        <xacro:elbow></xacro:elbow>
+    </gazebo>
+
+    <gazebo reference="back_left_wrist">
+        <xacro:wrist></xacro:wrist>
+    </gazebo>
+</robot>
